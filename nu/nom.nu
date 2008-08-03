@@ -23,10 +23,7 @@
            (set __attributes (extract-attributes margs))
            (set __html-attributes (htmlize-attributes (__attributes 0)))
            (set __body (__attributes 1))
-           (if __body
-             (+ "<#{__tagname} #{__attributes}>" (eval (cons + __body)) "</#{__tagname}>")
-             (else "<#{__tagname} #{(__attributes)}/>"))))
-
+           "<#{__tagname} #{__attributes}/>"))
 
 (tag br)
 (tag html)
