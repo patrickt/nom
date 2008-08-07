@@ -22,10 +22,6 @@ void NomNomNom()
     static int initialized = 0;
     if (!initialized) {
         initialized = 1;
-        load_nu_files(@"nu.programming.nom", @"elements");
-        load_nu_files(@"nu.programming.nom", @"extensions");
-        load_nu_files(@"nu.programming.nom", @"indenter");
-        load_nu_files(@"nu.programming.nom", @"generator")
         load_nu_files(@"nu.programming.nom", @"nom");
     }
 }
