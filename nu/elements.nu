@@ -1,7 +1,9 @@
+(load "extensions")
+
 ;; Man, there are a lot of obscure HTML tags.
 
 (global BLOCK-ELEMENTS
-        '(body colgroup dl fieldset form head html map noscript object
+        '(body colgroup dl fieldset form head_ html map noscript object
                ol optgroup pre script select style table tbody tfoot thead
                tr ul))
 
@@ -18,3 +20,5 @@
 (global EMPTY-ELEMENTS '(area base br col hr img input link meta param))
 
 (global WHITESPACE-PRESERVING-ELEMENTS '(pre script style))
+
+(global ELEMENT-GROUPS '(BLOCK-ELEMENTS PARAGRAPH-ELEMENTS INLINE-ELEMENTS EMPTY-ELEMENTS WHITESPACE-PRESERVING-ELEMENTS))

@@ -1,7 +1,8 @@
 (html
-     (head
+     (head_
           (title "Nuki!")
-          (meta http-equiv: "Content-Type" content:"text-html"))
+          (meta (http-equiv: "Content-Type" content:"text-html")))
     (body
-        (div id:main is
-             (div id:header is "I'm a header!"))))
+        (div (id: main)
+             (div (id:header)
+                "I'm a header!"))))
