@@ -9,3 +9,8 @@
 (class NSMutableString
     (imethod (id) << (id)toAppend is
         (self appendString:toAppend)))
+
+(class NSMutableString
+    (- (id) asOpenTag is "<#{self}>")
+    (- (id) asSelfClosingTag is "<#{self} />")
+    (- (id) asCloseTag is "</#{self}>"))
