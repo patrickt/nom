@@ -30,9 +30,10 @@
                 (if has-attributes? (cdr (cdr item))
                     (else (cdr item))))
             (puts "Contents are #{contents}")
-            (if (and contents has-attributes?)
-                ($results << (element-name asOpenTagWithAttributes:possible-attributes))
-                (else ($results << (element-name asOpenTag))))
+            (if contents
+                (if has-attributes?
+                    ($results << (element-name asOpenTagWithAttributes:possible-attributes))
+                    (else ($results << (element-name asOpenTag)))))
             (puts $results)
             (puts "Mapping contents")
             (contents each:(do (c) (emit-html c)))
