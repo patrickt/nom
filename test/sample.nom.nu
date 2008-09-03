@@ -1,5 +1,5 @@
 (html
-     (head_
+     (head
           (title "Nuki!")
           (meta (http-equiv: "Content-Type" content:"text-html")))
     (body

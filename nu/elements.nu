@@ -1,4 +1,6 @@
-(load "extensions")
+(puts "loading elements")
+
+(load "nom:extensions")
 
 ;; Man, there are a lot of obscure HTML tags.
 

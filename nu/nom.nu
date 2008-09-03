@@ -1,8 +1,6 @@
-(load "elements")
-(load "extensions")
+(import Foundation) ; TODO: check to see if this is necessary.
+(load "nom:elements")
 (load "match")
-
-(import Foundation)
 
 (function key-value-pairs? (item)
     (set is YES)
@@ -47,7 +45,7 @@
             ($results << ((eval item) stringValue)))))
 
          
-(function nom (item)
+(global nom (do (item)
     (cond
         ((item isKindOfClass:NSString)
             ;; It's a file location, so just re-call this with the contents of the file location as HTML
@@ -55,4 +53,4 @@
         ((item isKindOfClass:NuCell)
             (set $results "")
             (emit-html item)
-            $results)))
+            $results))))
