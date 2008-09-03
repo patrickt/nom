@@ -18,7 +18,6 @@ void NomInit()
 
 + (void)load
 {
-    NSLog(@"Loading");
     NomInit();
 }
 

@@ -1,5 +1,3 @@
-(puts "loading exts")
-
 (function htmlize-attributes (plist)
     (set result "")
     (plist eachPair:(do (key value)
