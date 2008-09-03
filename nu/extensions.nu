@@ -1,3 +1,9 @@
+(function htmlize-attributes (plist)
+    (set result "")
+    (plist eachPair:(do (key value)
+        (result << "#{(key labelName)}=#{value} ")))
+    (result stringByTrimmingCharactersInSet:(NSCharacterSet whitespaceCharacterSet)))
+
 (class NuCell
      ;; Join the elements of a list into a string with list elements separated by spaces.
      (imethod (id) join is
@@ -13,4 +19,6 @@
 (class NSMutableString
     (- (id) asOpenTag is "<#{self}>")
     (- (id) asSelfClosingTag is "<#{self} />")
-    (- (id) asCloseTag is "</#{self}>"))
+    (- (id) asCloseTag is "</#{self}>")
+    (- (id) asOpenTagWithAttributes:(id)attrs is "<#{self} #{(htmlize-attributes attrs)}>")
+    (- (id) asSelfClosingTagWithAttributes:(id) attrs is "<#{self} #{(htmlize-attributes attrs)} />"))

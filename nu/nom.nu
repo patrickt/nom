@@ -4,14 +4,14 @@
 
 (import Foundation)
 
-(function foo (item)
+(function key-value-pairs? (item)
     (set is YES)
     (item eachPair:(do (key value)
         (if is (set is (and (symbol? key) (string? value))))))
     is)
 
 (function plist? (item)
-    (and (pair? item) (eq (% (item count) 2) 0) (foo item)))
+    (and (pair? item) (eq (% (item count) 2) 0) (key-value-pairs? item)))
 
 (function emit-html (item)
     (puts "emitting for item #{item}")
