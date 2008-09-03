@@ -1,5 +1,6 @@
 (import Foundation) ; TODO: check to see if this is necessary.
 (load "nom:elements")
+(load "nom:extensions")
 (load "match")
 
 (function key-value-pairs? (item)
