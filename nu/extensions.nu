@@ -22,9 +22,17 @@
 
 (class NSNumber
      (- (id) even? is
-        (eq (% self 2) 0)))
+        (eq (% self 2) 0))
+    (- (id) odd? is (not even)))
 
 (class NuCell
+    
+    ;; Determines whether this cell represents a property list with labels and values.
+    (- (id) propertyList? is
+        (set symbolValidity (array))
+        (self eachWithIndex:(do (object idx)
+            (if (idx even?) (array appendObject:(object isLabel)))))
+        (and ((self count) even?) (all symbolValidity)))
      
      (- (id) containsObject:(id)item is
         (not (eq nil (self find:(do (ii) (eq ii item))))))

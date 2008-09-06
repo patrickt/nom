@@ -1,6 +1,17 @@
 (load "nom")
 
 (class TestExtensions is NuTestCase
+    
+    (- (id) testPropertyLists is
+        (set pl1 '(hello: "world" this: "is a label" so_is_this:100))
+        (set pl2 '(this_is: "short"))
+        (set is_not '(set something "other"))
+        (set tricky '(this_is: "technically" not_a:"plist" "because it has this last item"))
+        (assert_true (pl1 propertyList?))
+        (assert_true (pl2 propertyList?))
+        (assert_false (is_not propertyList?))
+        (assert_false (tricky propertyList?)))
+    
     (- (id) testContainsObject is
         (set list '(1 2 3 4 5))
         (assert_true (list containsObject:1))
