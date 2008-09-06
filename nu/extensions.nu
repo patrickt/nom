@@ -36,6 +36,7 @@
         (self eachPair:(do (key value)
                            (unless (key isLabel) (return nil))
                            (if (value isKindOfClass:NuCell) (set value (eval value)))
+                           (if (value isKindOfClass:NSString) (set value "\"#{value}\""))
                            (attributes appendString:"#{(key labelName)}=#{value} ")))
         ; This, sirs, is terrible.
         (set stripped (attributes strip))
