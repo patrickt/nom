@@ -54,4 +54,7 @@
         (assert_equal "<span id=100 class=\"silly\">" ("span" asOpenTagWithAttributes:'(id: 100 class:"silly"))))
     
     (- (id) testAttributesWithSelfClosingTags is
-        ))
+        (assert_equal "<meta http-equiv=\"content-type\" content=\"text-html; charset=utf-8\" />" 
+            ("meta" asSelfClosingTagWithAttributes:'(http-equiv:"content-type" content:"text-html; charset=utf-8")))
+        (assert_equal "<link media=\"all\" href=\"/stylesheets/nu.css\" type=\"text/css\" rel=\"stylesheet\" />"
+            ("link" asSelfClosingTagWithAttributes:'(media:"all" href:"/stylesheets/nu.css" type:"text/css" rel:"stylesheet")))))
