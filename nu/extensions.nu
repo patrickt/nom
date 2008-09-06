@@ -7,8 +7,8 @@
      (- (id) asOpenTag is "<#{self}>")
      (- (id) asSelfClosingTag is "<#{self} />")
      (- (id) asCloseTag is "</#{self}>")
-     (- (id) asOpenTagWithAttributes:(id)attrs is "<#{self} #{(htmlize-attributes attrs)}>")
-     (- (id) asSelfClosingTagWithAttributes:(id) attrs is "<#{self} #{(htmlize-attributes attrs)} />")
+     (- (id) asOpenTagWithAttributes:(id)attrs is "<#{self} #{(attrs asHTMLAttributes)}>")
+     (- (id) asSelfClosingTagWithAttributes:(id) attrs is "<#{self} #{(attrs asHTMLAttributes)} />")
      (- (id) strip is (self stringByTrimmingCharactersInSet:(NSCharacterSet whitespaceCharacterSet))))
 
 (function htmlize-attributes (plist)

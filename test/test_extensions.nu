@@ -36,6 +36,16 @@
         (assert_equal (not-labels asHTMLAttributes) nil))
         
         
-        
-        
-        )
+    (- (id) testSimpleOpenTags is
+        (assert_equal "<div>" ("div" asOpenTag))
+        (assert_equal "<span>" ("span" asOpenTag))
+        (assert_equal "<head>" ("head" asOpenTag)))
+    
+    (- (id) testSimpleClosingTags is
+        (assert_equal "</div>" ("div" asCloseTag))
+        (assert_equal "</span>" ("span" asCloseTag))
+        (assert_equal "</head>" ("head" asCloseTag)))
+    
+    (- (id) testSimpleSelfClosingTags is
+        (assert_equal "<hr />" ("hr" asSelfClosingTag))
+        (assert_equal "<br />" ("br" asSelfClosingTag))))
