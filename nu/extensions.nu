@@ -1,5 +1,8 @@
 (class NSObject
     (- (id) isLabel is NO))
+    
+(class NSFileHandle
+    (- (id) writeString:(id)str is (self writeData:(str dataUsingEncoding:NSUTF8StringEncoding))))
 
 (class NSMutableString
      (- (id) << (id)toAppend is
