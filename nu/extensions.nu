@@ -1,6 +1,7 @@
 (class NSObject
      ;; Only symbolsWithAColonLikeThis: are labels.
-     (- (id) isLabel is NO))
+     (- (id) isLabel is NO)
+     (- (id) propertyList? is NO))
 
 (class NSFileHandle
      (- (id) writeString:(id)str is
@@ -27,10 +28,11 @@
      
      ;; Determines whether this cell represents a property list with labels and values.
      (- (id) propertyList? is
-        (set symbolValidity (array))
-        (self eachWithIndex:(do (object idx)
-                                (if (idx even?) (array appendObject:(object isLabel)))))
-        (and ((self count) even?) (all symbolValidity)))
+        (if ((self count) even?)
+            (set valid YES)
+            (self eachPair:(do (key value) (if (and valid (not (key isLabel))) (set valid NO))))
+            valid
+            (else nil)))
      
      ;; Horay, a containsObject that doesn't use #arrayWithList:
      (- (id) containsObject:(id)item is
