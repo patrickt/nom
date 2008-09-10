@@ -1,34 +1,34 @@
 # nom: Nu on Markup #
 nom (all lowercase, please) is a Nu library designed to translate s-expressions into HTML code. Because HTML (and XML) are basically reinventions of s-expressions, there is a pleasant isomorphism between the two. nom can translate a given s-expression or the contents of a file into HTML code. Here's an example of a valid, nom-translatable s-expression (found in test/sample.nom.nu):
 
-`(doctype)
-(html
-     (head
-          (title "Nuki!")
-          (meta (http-equiv: "Content-Type" content:"text-html")))
-    (body
-        (div (id:"main")
-             (div (id:"header")
-                "I'm a header!"))))`
+    (doctype)
+    (html
+         (head
+              (title "Nuki!")
+              (meta (http-equiv: "Content-Type" content:"text-html")))
+        (body
+            (div (id:"main")
+                 (div (id:"header")
+                    "I'm a header!"))))
                 
 And here's the output from running `(nom "test/sample.nom.nu")`:
 
-`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN" "http://www.w3.org/TR/REC-html40/frameset.dtd">
-<html>
-  <head>
-    <title>
-Nuki!
-    </title>
-    <meta http-equiv="Content-Type" content="text-html" />
-  </head>
-  <body>
-    <div id="main">
-      <div id="header">
-I'm a header!
-      </div>
-    </div>
-  </body>
-</html>`
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN" "http://www.w3.org/TR/REC-html40/frameset.dtd">
+    <html>
+      <head>
+        <title>
+    Nuki!
+        </title>
+        <meta http-equiv="Content-Type" content="text-html" />
+      </head>
+      <body>
+        <div id="main">
+          <div id="header">
+    I'm a header!
+          </div>
+        </div>
+      </body>
+    </html>
 
 ## Why? ##
 
