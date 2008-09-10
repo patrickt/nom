@@ -2,7 +2,7 @@
 (load "nom:extensions")
 
 (class HTMLEmitter is NSObject
-     (ivars)
+     (ivars) (ivar-accessors)
      
      (- (id) init is
         (super init)

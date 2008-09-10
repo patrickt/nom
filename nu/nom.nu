@@ -13,6 +13,7 @@
             (set file-contents (cdr ((NuParser new) parse:(NSString stringWithContentsOfFile:item))))
             (set emitter (HTMLEmitter new))
             (file-contents each:(do (item)
-                (emitter emit:item))))
+                (emitter emit:item)))
+            nil)
         ((item isKindOfClass:NuCell)
             ((HTMLEmitter new) emit:item)))))
