@@ -14,6 +14,6 @@
             (set emitter (HTMLEmitter new))
             (file-contents each:(do (item)
                 (emitter emit:item)))
-            nil)
+            (emitter output))
         ((item isKindOfClass:NuCell)
             ((HTMLEmitter new) emit:item)))))

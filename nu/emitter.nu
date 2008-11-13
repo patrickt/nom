@@ -7,10 +7,10 @@
      (- (id) init is
         (super init)
         (set @indentation 0)
-        (set @output (NSFileHandle fileHandleWithStandardOutput))
+        (set @output (NSMutableString stringWithCapacity:1000))
         self)
      
-     (- (id) indent is (@indentation times:(do (i) (self write: "  "))))
+     (- (id) indent is (@indentation times:(do (i) (self write: "\t"))))
      
      (- (id) write:(id)item is
         (@output writeString:(item stringValue)))
@@ -34,7 +34,7 @@
      (- (id) writeClosingTag:(id)item is
         (set @indentation (- @indentation 1))
         (self indent)
-        (@output writeString: (item asClosingTag)))
+        (self write:(item asClosingTag)))
 
      
      (- (id) emit:(id)item is

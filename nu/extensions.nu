@@ -1,3 +1,5 @@
+
+
 (class NSObject
      ;; Only symbolsWithAColonLikeThis: are labels.
      (- (id) isLabel is NO)
@@ -18,13 +20,19 @@
      
      ;; There are a million implementations of #strip. Here's another.
      (- (id) strip is
-        (self stringByTrimmingCharactersInSet:(NSCharacterSet whitespaceCharacterSet))))
+        (self stringByTrimmingCharactersInSet:(NSCharacterSet whitespaceCharacterSet)))
+    
+     (- (id) writeString:(id)str is
+        (self appendString:str)))
 
 (class NSNumber
      (- (id) even? is (eq (% self 2) 0))
      (- (id) odd? is (not even)))
 
 (class NuCell
+     
+     (- (id) eachPairSafely:(id)block is
+        (if ((self count) even?) (self eachPair:block)))
      
      ;; Determines whether this cell represents a property list with labels and values.
      (- (id) propertyList? is
